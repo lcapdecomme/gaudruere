@@ -1,0 +1,73 @@
+* { 
+    margin: 0;
+    padding: 0;
+}
+body {      
+    position: absolute;
+    top: 0;
+    left:0;      
+    background: url("bg_body.gif") repeat scroll 0 0 #E0DBBA;
+    color: #777777;
+    font: 100% "Verdana",Helvetica,Arial,sans-serif;
+    letter-spacing: -0.05em;
+    width: 100%;
+    z-index:0;
+}
+#page {         
+    width: 980px;
+    height:800px;
+    margin: 0 auto;
+}
+
+/* Entete */
+#header {
+    background: url("bg_header.gif") repeat scroll 0 0 transparent;
+    height: 150px;
+    position: absolute;
+    top: 0px;
+    left:0px;
+    width: 100%;
+    z-index:100;
+}   
+#menu H1 {
+    background: url("logo.png") repeat scroll 0 0 transparent;
+    font-size: 0;
+	height:116px;
+	width:450px;
+}
+#menu {      
+    background: url("bg_menu.png") repeat scroll 0 0 transparent;    
+    position: relative;      
+    top: -1px;
+    height: 150px;
+    margin: 0 auto;
+    width: 980px;      
+    z-index:1000;
+}
+#slideshow {      
+    position: absolute;      
+    top: 0px;
+    height: 600px;
+    margin-bottom: 20px;
+    margin: 0 auto;
+    width: 980px;      
+    z-index:500;
+}
+
+
+/* Bas-de-page */
+#footer {
+    background: url("bg_footer.gif") repeat scroll 0 0 transparent;    
+    position: absolute;     
+    top: 600px;  
+    height: 100px;
+    margin: 0 auto;
+    width: 978px;   
+    border:1px solid #808080;
+}  
+#footer H2 {
+    font-size: 2em;
+    text-align:right;
+    margin-top:50px;
+	color: #E18B14;
+}
