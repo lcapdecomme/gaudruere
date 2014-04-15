@@ -1,0 +1,17 @@
+* Quelques bonnes pratiques de dev PHP intéressantes : 
+  ==> http://www.noplay.net/Bonnes-pratiques-de-developpement.html
+  
+* Tests unitaires en PHP :
+  ==> http://www.blog-nouvelles-technologies.fr/archives/6600/introduction-aux-tests-unitaires-en-php-avec-phpunit/
+
+* Eclipse for PHP Developers
+http://www.eclipse.org/downloads/packages/eclipse-php-developers/heliosr
+
+* Mode "B!te & Couteau" ou framework : Symfony a souvent l'air d'être apprécié
+http://www.dustinweber.com/main-page/the-best-php-framework-is-symfony-really-it/
+
+** Il est possible de l'utiliser sur OVH
+http://trac.symfony-project.org/wiki/InstallingSymfonyOnOVH
+http://www.desai.fr/blog/6/faire-fonctionner-symfony-sur-un-hebergement-mutualise-ovh
+
+* Choix de l'encodage : UTF8 partout (SGBD, codes sources...)

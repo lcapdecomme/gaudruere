@@ -1,0 +1,81 @@
+De:	TORRES Bruno
+Envoyé:	mercredi 22 février 2012 13:47
+À:	CAPDECOMME Lionel; MIOT Christelle; BEAUBESTRE Marc; LASSAGNE 
+Christophe
+Cc:	GUIRAUD Cédric; OUCHANI Mohamed
+Objet:	RE: [Gaudruère] Ergonomie 
+Pièces jointes:	Photostextes.pptx
+
+J’ai complété la 1ere partie avec ce que j’avais noté hier.
+
+Ce que j’avais noté :
+
+Bandeau :
+
+Sur la page d’accueil, les photos doivent apparaitre en transparence sous le bandeau.
+Sur les autres pages, le bandeau est opaque. Les photos et le texte sont sous le bandeau.
+
+Il faut ajouter « Votre chambre d’hôtes en Sarthe » sous « La Gaudruère » et décaler le menu vers la 
+droite.
+
+La couleur de la sélection du menu est OK (Orange).
+La navigation sur les menus doit apparaitre en orange plus pâle.
+
+Un clic sur « La Gaudruère » permet de revenir à la page d’accueil.
+
+Pages :
+
+Lorsqu’il y a un sous-menu, il doit apparaitre à gauche de la page. (Reste à définir si on ajoute des icones)
+Pour une page donnée, on peut ne pas avoir de photo.
+
+Fonctionnement :
+
+Il faut prévoir un état pour chaque article. Ça permet de publier uniquement que lorsque l’article est 
+validé.
+
+Contenu :
+
+Les menus et sous menus, le type de page, les textes et les photos associées à chaque article sont définis 
+dans PPT de Christelle sous transit/MIOT (ergonomie)
+
+A+
+
+Bruno
+
+
+
+
+De : CAPDECOMME Lionel  
+Envoyé : mercredi 22 février 2012 08:01 
+À : MIOT Christelle; TORRES Bruno; BEAUBESTRE Marc; LASSAGNE Christophe 
+Cc : GUIRAUD Cédric; OUCHANI Mohamed 
+Objet : [Gaudruère] Ergonomie 
+
+Parfait !
+J’ai fait un mixte avec le document présenté hier pour les menus et les textes
+J’ai ajouté quelques notes prises sur le moment
+J’ai certainement oublié des choses …
+Pouvez-vous relire et compléter avant que je transfère aux codeurs ? 
+Cela fera une très bonne base de travail 
+Yonel
+
+
+
+
+
+De : MIOT Christelle  
+Envoyé : mardi 21 février 2012 22:29 
+À : TORRES Bruno; CAPDECOMME Lionel 
+Objet : Photostextes.pptx
+
+Salut,
+
+Bon pour que vous ne vous ennuyiez pas ce week-end, voici notre travail de la soirée.
+
+Je n’ai pas réussi à aller sur Transit donc j’ai fait un nouveau powerpoint.
+
+On en reparle jeudi !
+
+Bisous
+
+Catherine et Christelle
