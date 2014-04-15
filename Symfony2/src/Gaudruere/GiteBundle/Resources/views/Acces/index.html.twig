@@ -1,0 +1,40 @@
+{% extends "GaudruereGiteBundle::layouts/gaudruerebaselayout.html.twig" %}
+
+{% block content %}   
+<div class="doublepage">
+<div class="acces-navigation">
+  {{ parametres.descriptionAcces|raw }}
+</div>
+<div class="acces-content">
+    <h2>Accès</h2>
+    <script type="text/javascript">
+     
+      function initialize() {
+        var myOptions = {
+          scaleControl: true,
+          center: new google.maps.LatLng(47.780156, 0.418456),
+          zoom: 10,
+          mapTypeId: google.maps.MapTypeId.HYBRID
+        };
+    
+        var map = new google.maps.Map(document.getElementById("map_canvas"),
+            myOptions);
+            
+        var marker = new google.maps.Marker({
+          map: map,
+          position: map.getCenter()
+        });
+        var infowindow = new google.maps.InfoWindow();
+        infowindow.setContent('<b>Gîte de La Gaudruère</b><br />72500 Jupilles');
+        google.maps.event.addListener(marker, 'click', function() {
+            infowindow.open(map, marker);
+        });
+      
+      }
+      window.onload = initialize;
+    </script>
+    <div id="map_canvas"></div>
+</div>
+</div>
+    
+{% endblock %}

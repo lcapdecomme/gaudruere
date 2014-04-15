@@ -1,0 +1,114 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: url("bg_body.gif") repeat scroll 0 0 #E0DBBA;
+	color: #777777;
+	font: 14px "Verdana", Helvetica, Arial, sans-serif;
+}
+
+/*
+img {
+	box-shadow: 5px 5px 5px #aaa;
+}
+*/
+
+#bandeau {
+	background: url("bg_header.gif") repeat scroll 0 150px transparent;
+	height: 150px;
+	width: 100%;
+}
+
+#page {
+	width: 980px;
+	margin: 0 auto;
+}
+
+/* Entete */
+#header {
+	z-index: 800;
+	position: absolute;
+	top: 0;
+	height: 150px;
+	width: 980px;
+}
+#header.accueil {
+	background: url("bg_menu.png") repeat scroll 0 0 transparent;
+}
+#header.site {
+	background: url("bg_entete.jpg") repeat scroll 0 0 transparent;
+}
+#header.acces {
+	background: url("bg_acces.jpg") repeat scroll 0 0 transparent;
+}
+#header.reservation {
+	background: url("bg_reservation.jpg") repeat scroll 0 0 transparent;
+}
+#header.contact {
+	background: url("bg_contact.jpg") repeat scroll 0 0 transparent;
+}
+
+#header a.logo {
+background: url("logo.png") repeat scroll 0 0 transparent;
+height: 90px;
+width: 390px;
+display: block;    
+z-index: 1000;
+}
+/* Content */
+#content {  
+background-color: #E5E1C7;    
+width: 980px;
+min-height: 450px;
+}
+
+.doublepage {
+background: url("bg_content.png") repeat-y scroll 0 0 transparent;
+min-height: 450px;
+}
+
+
+/* Bas-de-page */
+#footer {
+background: url("bg_menu.png") repeat scroll 0 0 transparent;
+height: 80px;
+width: 978px;
+border: 1px solid #808080;
+}
+#footer #remerciementfooter {
+color: #E5E1C7;
+font-size: 0.9em;
+margin: 0;
+text-align: center;
+text-decoration: none;
+width:100%;
+float:right;
+display:inline;
+}
+#footer #titrefooter {
+color: #E18B14;
+font-size: 2.2em;
+margin: 13px 20px 0 0;
+text-align: right;
+text-decoration: none;
+width:75%;
+float:right;
+display:inline;
+}
+#footer #contactfooter {
+display: block;
+font-weight: bold;
+padding: 21px 20px;
+background: none repeat scroll 0 0 transparent;
+width:15%;
+float:left;
+display:inline;
+}
+#footer #contactfooter a {
+font-size: 1.1em;
+color: #FFFFFF;
+border-bottom:3px solid #FFFFFF; 
+text-decoration: none;
+}

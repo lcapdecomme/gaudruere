@@ -1,0 +1,19 @@
+{% extends "GaudruereGiteBundle::layouts/gaudruerebaselayout.html.twig" %}
+
+{% block content %} 
+  {% block logocontent %}  <a class="logoadmin" href="{{ path('adminGaudruere') }}"></a>{% endblock %}
+<div class="admin">     
+
+  <h2>Création d'une réservation</h2>
+
+<form action="{{ path('adminReservation_create') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <p>
+        <button type="submit">Valider</button>
+    </p>
+</form>
+
+
+<a class="retour" href="{{ path('adminReservation') }}">Retour à la page d'administration</a>    
+</div>          
+{% endblock %}

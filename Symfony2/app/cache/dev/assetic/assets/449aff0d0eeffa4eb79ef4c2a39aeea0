@@ -1,0 +1,188 @@
+#header a.logoadmin{
+background: url("../../bundles/gaudrueregite/css/logoadmin.png") repeat scroll 0 0 transparent;
+height: 90px;
+width: 390px;
+display: block;    
+z-index: 1000;
+}
+#content a.logoadmin  {
+text-decoration:none;
+}
+#content .admin table.admin_records_list {
+margin:0 auto;
+padding: 1px;
+border-collapse:collapse;
+width:90%;
+}
+#content .admin .admin_records_list tr.menu {
+background-color:#D3CDAB;
+font-weight: bold;
+}
+#content .admin .admin_records_list th, #content .admin_records_list td {
+border:1px solid black;
+height: 26px; 
+padding: 0 2px;
+}
+#content .admin .record_properties th {
+width:220px;
+height: 27px;
+}
+#content .admin .admin_records_list td {
+text-align:center;
+}
+#content .admin .admin_records_list td.droite {
+text-align:left;
+padding-left:15px;
+}
+#content .admin .admin_records_list caption {
+font-weight:bold
+}
+#content .admin  a {
+border-bottom: 3px solid #B26B0E;
+color: #000;
+font-size: 1em;
+text-decoration: none;     
+color:#B26B0E;
+font-weight: bold;
+}
+#content .admin  a.retour {
+margin:10px;
+display:inline-block;
+}
+#content .admin li.article {
+height: 90px;
+border: 1px dotted;
+width: 225px;
+margin: 0 0 9px 9px;
+padding: 0px
+}
+
+#content .admin a p {
+padding-top: 34px;
+text-align: center;
+}
+#content .admin form #gaudruere_gitebundle_menutype_type label {
+width: 100px;
+}
+html body div#page div#content div.admin form div#gaudruere_gitebundle_menutype div div#gaudruere_gitebundle_menutype_type {
+display:inline;
+}
+#content .admin form label.required {
+font-weight : bold;
+}
+#content .admin form textarea {
+width: 743px; 
+height: 165px;
+}
+#content .admin form label {
+display: inline-block;
+padding-left: 20px;
+width: 200px;
+padding-bottom: 7px;
+vertical-align: top;
+}
+
+#content .admin form button {
+border-color: #CEC9AB;
+border-radius: 3px 3px 3px 3px;
+border-style: solid;
+border-width: 1px;
+cursor: pointer;
+font-size: 10px;
+font-weight: bold;
+padding: 7px;
+width: auto;
+}
+#content .admin form p {
+margin : 10px 0px 10px 220px;
+}
+#content .admin #gaudruere_gitebundle_reservationtype_dateFin, #content .admin #gaudruere_gitebundle_reservationtype_dateDebut {
+display:inline-block;
+}
+#content .admin ul {
+list-style: none outside none;
+}
+
+
+#content .admin form div #gaudruere_gitebundle_articletype_tailleImage, 
+#content .admin form div #gaudruere_gitebundle_articletype_positionImage, 
+#content .admin form div #gaudruere_gitebundle_articletype_bordureImage {
+display: inline;
+width: 711px;
+}
+#content .admin form div #gaudruere_gitebundle_articletype_tailleImage label, 
+#content .admin form div #gaudruere_gitebundle_articletype_positionImage label, 
+#content .admin form div #gaudruere_gitebundle_articletype_bordureImage label {
+width: 120px;
+padding-left: 5px;
+padding-right: 15px;
+}
+#content .admin form div {
+margin-top: 10px;
+margin-bottom: 10px;
+}
+#content .admin form div .mceEditor {
+left: 225px;
+margin-left: 220px;
+position: relative;
+top: -22px;
+}
+
+#content .admin div.renduArticle {
+border: 2px dotted black; 
+display: inline-block;
+height: 100%;
+vertical-align: top;
+clear: both;
+float:right;
+margin-left: 31%;
+width: 69%;
+}
+#content .admin div.renduArticle p {
+margin: 0.5em;
+height: 100%;
+}
+#content .admin div.renduArticle h2 {
+border-bottom: 5px solid;
+margin: 10px 0 20px;
+}
+#content .admin div.renduArticle img.petit {
+max-width: 100px;
+max-height: 72px;
+}
+#content .admin div.renduArticle img.moyen {
+max-width: 300px;
+max-height: 216px;
+}
+#content .admin div.renduArticle img.grand {
+max-width: 500px;
+max-height: 360px;
+}
+#content .admin div.renduArticle img.bordure {
+border: 10px solid white;
+}
+#content .admin div.renduArticle img.gauche {
+float: left;
+}
+#content .admin div.renduArticle img.droite {
+float: right;
+}
+#content .admin div.renduArticle img {
+border: none;
+margin-bottom: 10px;
+margin-left: 10px;
+margin-right: 34px;
+}
+#content .admin div.renduArticle ul {
+margin-left: 10px;
+padding-left: 35px;
+list-style: disc outside none;
+}
+#content .admin div.renduArticle ul li{    
+padding-left: 3px;
+font-size:1.3em;
+}
+#content .admin ul.articles li.article a p  {
+padding-left:0;
+padding-right:0;
+}

@@ -1,0 +1,47 @@
+{% extends "GaudruereGiteBundle::layouts/gaudruerebaselayout.html.twig" %}
+
+{% block content %} 
+
+<div class="admin">     
+
+  {% block logocontent %}  <a class="logoadmin" href="{{ path('adminGaudruere') }}"></a>{% endblock %}
+  <h2>Modification des paramètres généraux du site</h2>
+
+    <form action="{{ path('adminParametreGeneral_update') }}" method="post" {{ form_enctype(edit_form) }}>
+        <!-- Les erreurs générales du formulaire. -->
+        {{ form_errors(edit_form) }}
+    
+        <div>
+            {{ form_label(edit_form.phraseBandeau, "Phrase du bandeau") }}
+            {{ form_widget(edit_form.phraseBandeau, { 'attr': {'size': '75'} }) }}               
+            {{ form_errors(edit_form.phraseBandeau) }}
+        </div>    
+		
+        <div>
+            {{ form_label(edit_form.email, "Mon Email") }}
+            {{ form_widget(edit_form.email) }}               
+            {{ form_errors(edit_form.email) }}
+        </div>  
+		
+        <div>
+            {{ form_label(edit_form.nbMoisCalendrier, "nb Mois à afficher dans le calendrier") }}
+            {{ form_widget(edit_form.nbMoisCalendrier) }}               
+            {{ form_errors(edit_form.nbMoisCalendrier) }}
+        </div>
+		
+        <div>
+            {{ form_label(edit_form.phraseRemerciement, "Phrase remerciement") }}
+            {{ form_widget(edit_form.phraseRemerciement, { 'attr': {'size': '75'} }) }}           
+            {{ form_errors(edit_form.phraseRemerciement) }}
+        </div>
+        
+        <p>
+        	<button type="submit">Valider</button>
+        </p>    
+    </form>    
+    
+    <a class="retour" href="{{ path('adminGaudruere') }}">Retour à la page d'administration</a>   
+</div>
+
+              
+{% endblock %}

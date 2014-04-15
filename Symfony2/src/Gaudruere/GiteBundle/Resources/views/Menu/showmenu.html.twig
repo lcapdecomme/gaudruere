@@ -1,0 +1,40 @@
+{% extends "GaudruereGiteBundle::layouts/gaudruerebaselayout.html.twig" %}
+
+{% block content %} 
+  {% block logocontent %}  <a class="logoadmin" href="{{ path('adminGaudruere') }}"></a>{% endblock %}
+<div class="admin">     
+
+  <h2>Menu : {{ entity.titre }} ({{ entity.id }})</h2>
+  
+  <table class="record_properties">
+      <tbody>
+          <tr>
+              <th>Titre</th>
+              <td>{{ entity.titre }}</td>
+          </tr>
+          <tr>
+              <th>Description</th>
+              <td>{{ entity.description|raw }}</td>
+          </tr>
+          <tr>
+              <th>Ordre</th>
+              <td>{{ entity.ordre }}</td>
+          </tr>
+      </tbody>
+  </table>
+
+  
+  <form action="{{ path('adminMenu_delete', { 'id': entity.id }) }}" method="post">
+      {{ form_widget(delete_form) }}
+      <p>
+          <button type="submit" onclick="return confirm('Supprimer cet objet ?');">Supprimer ce menu</button>
+      </p>
+  </form>
+  
+  <a class="retour" href="{{ path('adminMenu_edit', { 'id': entity.id }) }}">Modifier</a>
+  
+  <a class="retour" href="{{ path('adminMenu') }}">Retour à la liste des menus</a>
+</div>
+
+              
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "GaudruereGiteBundle::layouts/gaudruerebaselayout.html.twig" %}
+
+{% block content %}
+{{ menu.description|raw }}
+
+<ul class="articles">
+{% for sousmenu in sousmenus %}
+  <li class="article">
+      {% if sousmenu.getType() == 'article' %}
+          <a href="{{ path('articleGaudruere',{'titreArticle':sousmenu.getNom()}) }}">
+      {% elseif sousmenu.getType() == 'acces' %}
+          <a href="{{ path('accesGaudruere') }}">
+      {% elseif sousmenu.getType() == 'contact' %}
+          <a href="{{ path('contactGaudruere') }}">
+      {% endif %}
+      <p class="titremenu">{{ sousmenu.getTitre() }}&nbsp;></p>
+      <img class="illustration" src="{{ asset('uploads/vignettes/' ~ sousmenu.id ~ '/' ~ sousmenu.cheminPhoto) }}" alt="Photo absente" />
+      </a>
+  </li>
+{% endfor %}
+</ul>
+{% endblock %}

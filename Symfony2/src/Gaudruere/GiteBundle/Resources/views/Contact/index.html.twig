@@ -1,0 +1,45 @@
+{% extends "GaudruereGiteBundle::layouts/gaudruerebaselayout.html.twig" %}
+
+{% block content %}    
+<div class="doublepage">
+<div class="contact-navigation">
+    <h2>Formulaire de contact</h2>
+    <form method="post" {{ form_enctype(form) }}>
+          <!-- Les erreurs générales du formulaire. -->
+          {{ form_errors(form) }}
+          
+          <!-- Nom -->
+          <div>
+              {{ form_label(form.nom, "Votre nom complet") }}    
+              {{ form_widget(form.nom) }}
+              {{ form_errors(form.nom) }}
+          </div>
+          
+          <!-- Email -->
+          <div>
+              {{ form_label(form.email, "Votre Email") }}
+              {{ form_errors(form.email) }}
+              {{ form_widget(form.email) }}
+          </div>
+          
+          <!-- Le message -->
+          <div>
+              {{ form_label(form.message, "Votre message") }}
+              {{ form_errors(form.message) }}
+              {{ form_widget(form.message) }}
+          </div>
+    
+        	<input class="submit" type="submit" />
+    </form>
+</div>
+<div class="contact-content">
+    <h2>Contactez-moi</h2>
+    <div class="contact">
+        {{ parametres.descriptionContact|raw }}
+        <p>mail : <a href="mailto:{{ parametres.email|raw }}">{{ parametres.email|raw }}</a></p>
+    </div>
+    <div class="logo"></div>
+    <p><a href="acces">Voir le plan d'accès >>></a></p>
+</div>
+</div>
+{% endblock %}

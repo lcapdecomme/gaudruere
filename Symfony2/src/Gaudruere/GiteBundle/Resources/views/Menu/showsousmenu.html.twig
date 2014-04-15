@@ -1,0 +1,45 @@
+{% extends "GaudruereGiteBundle::layouts/gaudruerebaselayout.html.twig" %}
+
+{% block content %} 
+  {% block logocontent %}  <a class="logoadmin" href="{{ path('adminGaudruere') }}"></a>{% endblock %}
+<div class="admin">     
+
+  <h2>Sous-Menu : {{ entity.titre }} ({{ entity.id }})</h2>
+  
+  <table class="record_properties">
+      <tbody>
+          <tr>
+              <th>Titre</th>
+              <td>{{ entity.titre }}</td>
+          </tr>
+   
+          <tr>
+              <th>Vignette</th>
+              <td><img style="width:150px" src="{{ asset('uploads/vignettes/' ~ entity.id ~ '/' ~ entity.cheminPhoto) }}" alt="{{ entity.cheminPhoto }}" title="{{ entity.cheminPhoto }}" /></td>
+          </tr>    
+          <tr>
+              <th>Ordre</th>
+              <td>{{ entity.ordre }}</td>
+          </tr> 
+          <tr>
+              <th>Menu Parent</th>
+              <td>{{ entity.menuparent }}</td>
+          </tr>
+      </tbody>
+  </table>
+
+  
+  <form action="{{ path('adminSousMenu_delete', { 'id': entity.id }) }}" method="post">
+      {{ form_widget(delete_form) }}
+      <p>
+          <button type="submit" onclick="return confirm('Supprimer cet objet ?');">Supprimer ce sous-menu</button>
+      </p>
+  </form>
+  
+  <a class="retour" href="{{ path('adminSousMenu_edit', { 'id': entity.id }) }}">Modifier ce sous-menu</a>
+  
+  <a class="retour" href="{{ path('adminMenu') }}">Retour à la liste des menus</a>
+</div>
+
+              
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "GaudruereGiteBundle::layouts/gaudruerebaselayout.html.twig" %}
+
+{% block content %}
+
+  {% block logocontent %}  <a class="logoadmin" href="{{ path('adminGaudruere') }}"></a>{% endblock %}
+  <div class="admin"> 
+
+      <h2>Administration du site</h2>      
+
+      <!--
+      {% if error %}
+    <div>{{ error.message }}</div>
+{% endif %}
+-->
+
+<form action="{{ path('loginCheckAdmin') }}" method="post">
+    <label for="username">Utilisateur : </label>
+    <input type="text" id="username" name="_username" value="{{ last_username }}" />
+    <br />
+    <label for="password">Mot de passe : </label>
+    <input type="password" id="password" name="_password" />    
+    <br />
+    <p>
+        <button type="submit">Connexion</button>
+    </p>
+</form>
+
+
+  </div>
+{% endblock %}
+                                   

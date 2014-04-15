@@ -1,0 +1,53 @@
+{% extends "GaudruereGiteBundle::layouts/gaudruerebaselayout.html.twig" %}
+
+{% block content %}  
+  {% block logocontent %}  <a class="logoadmin" href="{{ path('adminGaudruere') }}"></a>{% endblock %}
+<div class="admin">  
+
+    <h2>Liste des menus et sous-menus</h2>
+    
+    <table class="admin_records_list">
+        <thead>
+            <tr>
+                <th>Numéro</th>
+                <th>Titre</th>
+                <th>Type</th>
+                <th>Ordre</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>    
+        {% set cpt = 1 %}
+        {% for menu in menusTries %}
+            {% if menu.menuParent is null %}
+                <tr class="menu">
+            {% else %}    
+                <tr class="sousmenu">
+            {% endif %}
+                <td>{{ cpt }}</td>        
+                {% set cpt = cpt + 1 %}
+                {% if menu.menuParent is not null %}
+                    <td class="droite">.&nbsp;&nbsp; {{ menu.titre }}</td>  
+                {% else %}    
+                    <td class="droite">{{ menu.titre }}</td>
+                {% endif %}    
+                <td>{{ menu.type }}</td>
+                <td>{{ menu.ordre }}</td>  
+                {% if menu.menuParent is null %}
+                    <td><a href="{{ path('adminMenu_show', { 'id': menu.id }) }}">voir</a> / <a href="{{ path('adminMenu_edit', { 'id': menu.id }) }}">modifier</a></td>
+                {% else %}    
+                    <td><a href="{{ path('adminSousMenu_show', { 'id': menu.id }) }}">voir</a> / <a href="{{ path('adminSousMenu_edit', { 'id': menu.id }) }}">modifier</a></td>
+                {% endif %}                      
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    
+    <a class="retour" href="{{ path('adminMenu_new') }}">Ajouter un Menu</a>
+    
+    <a class="retour" href="{{ path('adminSousMenu_new') }}">Ajouter un Sous-Menu</a>
+    
+    <a class="retour" href="{{ path('adminGaudruere') }}">Retour à la page d'administration</a>   
+    
+</div>          
+{% endblock %}

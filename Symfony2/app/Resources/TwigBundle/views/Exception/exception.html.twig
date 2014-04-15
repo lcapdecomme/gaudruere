@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>		
+    <style type="text/css">
+    .header { display:none;} 
+    .clear_fix { display:none;}
+    * {
+	margin: 0;
+	padding: 0;
+}
+  #content {
+  width:100%; !important
+  }
+html {
+	background: url("http://www.lagaudruere.fr/bundles/gaudrueregite/css/bg_body.gif") repeat scroll 0 0 #E0DBBA;  !important
+}
+body {
+	background: url("http://www.lagaudruere.fr/bundles/gaudrueregite/css/bg_body.gif") repeat scroll 0 0 #E0DBBA;  !important
+	color: #777777; !important
+	font: 14px "Verdana", Helvetica, Arial, sans-serif;    
+}
+/* Lucida Calligraphy */
+
+
+#abandeau {
+	background: url("http://www.lagaudruere.fr/bundles/gaudrueregite/css/bg_header.gif") repeat scroll 0 150px transparent;
+	height: 150px;
+	width: 100%;
+}
+
+#apage {
+	width: 980px;
+	margin: 0 auto;
+}
+
+/* Entete */
+#aheader {
+	z-index: 800;
+	position: absolute;
+	top: 0;
+	height: 150px;
+	width: 980px;
+	background: url("http://www.lagaudruere.fr/bundles/gaudrueregite/css/bg_menu.png") repeat scroll 0 0 transparent;
+}
+#aheader a.logo {
+background: url("http://www.lagaudruere.fr/bundles/gaudrueregite/css/logo.png") repeat scroll 0 0 transparent;
+height: 90px;
+width: 390px;
+display: block;    
+z-index: 1000;
+}
+/* Content */
+#acontent {  
+width: 980px;
+min-height: 450px;
+background:white;
+}
+
+/* font utilisé : Lucida Calligraphy */
+.aimg404 {
+background: url("http://www.lagaudruere.fr/bundles/gaudrueregite/css/error404.png") no-repeat scroll 0 0 white;
+height:397px;
+width:600px;      
+margin: 0 auto;
+}
+
+/* font utilisé : Lucida Calligraphy */
+.aimg500 {
+background: url("http://www.lagaudruere.fr/bundles/gaudrueregite/css/error500.png") no-repeat scroll 0 0 white;
+height:397px;
+width:600px;      
+margin: 0 auto;
+}
+
+.amenu {
+background: none repeat scroll 0 0 #E29938 !important;
+color: #FFFFFF;
+display: block;
+font-size: 1.1em;
+font-weight: bold;
+height: 20px;
+padding: 12px 15px;
+margin-top: 15px;
+float: right;
+width: 64px;
+}
+.amenu a {
+color:#FFF;
+font-weight:bold;   
+text-decoration: none;
+font-size:14px;
+}
+
+/* Bas-de-page */
+#afooter {
+	background: url("http://www.lagaudruere.fr/bundles/gaudrueregite/css/bg_menu.png") repeat scroll 0 0 transparent;
+	height: 60px;
+	width: 978px;
+	border: 1px solid #808080;
+}
+
+#afooter H2 {
+color: #E18B14;
+font-size: 2.2em;
+margin: 13px 20px 0 0;
+text-align: right;
+text-decoration: none;
+}
+
+    </style> 
+</head>
+
+<body>
+
+	<div id="abandeau"></div>
+
+	<div id="apage">
+
+      <div id="aheader">
+		        <a class="logo" href="{{ path('accueilGaudruere') }}">&nbsp;</a> 
+            <div class="amenu"><a href="http://www.lagaudruere.fr/accueil" class="menuactif">Accueil</a> </div>
+      </div>
+      
+      <div id="acontent">
+			
+			{% if status_code == "404" %}
+				<div class="aimg404"></div>
+			{% else %}
+				<div class="aimg500"></div>
+			{% endif %}
+      </div>
+      
+      <div id="afooter">
+          <h2>Le serveur a retourné "{{ status_code }} : {{ status_text }}".</h2>
+      </div>     
+  </div>
+  
+</body>
+</html>

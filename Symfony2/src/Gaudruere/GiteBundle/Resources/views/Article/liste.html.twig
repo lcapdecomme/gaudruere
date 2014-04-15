@@ -1,0 +1,43 @@
+{% extends "GaudruereGiteBundle::layouts/gaudruerebaselayout.html.twig" %}
+
+{% block content %}  
+<div class="admin">  
+
+<h2>Liste des articles</h2>
+
+  {% block logocontent %}  <a class="logoadmin" href="{{ path('adminGaudruere') }}"></a>{% endblock %}
+<table class="admin_records_list">
+    <thead>
+        <tr>
+            <th>Numéro</th>
+            <th>Titre de l'article</th>
+            <th>Menu associé</th>
+            <th>Ordre</th>
+            <th>Image</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% set cpt = 1 %}
+    {% for entity in entities %}
+        <tr>
+            <td>{{ cpt }}</td>
+            {% set cpt = cpt + 1 %}
+            <td class="droite">{{ entity.titre }}</td>  
+            <td class="droite">{{ entity.menu }}</td>  
+            <td>{{ entity.ordre }}</td>  
+            {% if entity.cheminPhoto != "" %}
+                <td>X</td>          
+             {% else %}
+                <td>&nbsp;</td>   
+            {% endif %}
+            <td><a href="{{ path('adminArticle_show', { 'id': entity.id }) }}">voir</a> /  <a href="{{ path('adminArticle_edit', { 'id': entity.id }) }}">modifier</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<a class="retour" href="{{ path('adminArticle_new') }}">Ajouter un nouvel article</a>
+<a class="retour" href="{{ path('adminGaudruere') }}">Retour à la page d'administration</a>    
+</div>          
+{% endblock %}

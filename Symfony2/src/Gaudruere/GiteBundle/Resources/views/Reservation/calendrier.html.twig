@@ -1,0 +1,41 @@
+{% for cal in calendriers %}
+  	<div class="calendrier calendrierRoundedCorners">
+		{% if loop.first %}
+			<input id="conflitDates" name="conflitDates" type="hidden" value="{{ conflitDates }}">
+		{% endif %}
+        
+        <div class="calendrierTitre calendrierRoundedCorners">{{ cal.titre }}</div>
+        
+        <!--
+            Le fait d'utiliser la propriété display:inline-block sur ces DIV a pour conséquence 
+            qu'ils se positionnent dans le flux de texte HTML comme des éléments de type inline, 
+            et donc s'il y a une succesion d'espace blancs entre eux dans le code source, 
+            ces espaces vont fusionner en un seul espace à l'affichage (exactement comme cela se passe quand 
+            il y a des espaces entre des balises <img />, pour citer un exemple de "vraie" balise inline).
+            
+            Pour remédier à ce premier problème, il faut donc supprimer ces espaces. Voici deux solutions :
+              * solution A : Mettre tous les DIV collés les uns aux autres dans le code source
+              * solution B : Empêcher que les retours à la ligne dans la source ne soient interprétés comme des espaces, en ajoutant des balises de commentaires                
+        -->
+        <div class="calendrierSousTitre calendrierBorderBody">
+              <div>Lu</div><!--
+           --><div>Ma</div><!--
+           --><div>Me</div><!--
+           --><div>Je</div><!--
+           --><div>Ve</div><!--
+           --><div class="calendrierJourSemaineWeekEnd">Sa</div><!--
+           --><div class="calendrierJourSemaineWeekEnd">Di</div>
+        </div> 
+    
+       <div class="calendrierBody calendrierBorderBody"><!--
+       		
+       		{% for jour in cal.jours  %}
+       			--><div {{ jour.complementHtml | raw}} class="{{ jour.css | raw}}">{{ jour.chiffre | raw}}</div><!-- 
+       		{% endfor %}
+       --></div>
+       
+       <div class="calendrierFooter calendrierFooterRoundedCorners">
+            <div class="calendrierFooterInner calendrierFooterRoundedCorners">&nbsp;</div>
+       </div>
+	</div>
+{% endfor %}

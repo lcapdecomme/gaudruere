@@ -1,0 +1,44 @@
+{% extends "GaudruereGiteBundle::layouts/gaudruerebaselayout.html.twig" %}
+
+{% block content %} 
+  {% block logocontent %}  <a class="logoadmin" href="{{ path('adminGaudruere') }}"></a>{% endblock %}
+<div class="admin">     
+
+  <h2>Création d'un menu</h2>
+
+{{ tinymce_init() }}
+
+<form action="{{ path('adminMenu_create') }}" method="post" {{ form_enctype(form) }}>
+    <!-- Les erreurs générales du formulaire. -->
+    {{ form_errors(form) }}
+    
+    <div>
+        {{ form_label(form.titre, "Titre du menu") }}
+        {{ form_widget(form.titre) }}                     
+        {{ form_errors(form.titre) }}
+    </div>
+    
+    <div>
+        {{ form_label(form.description, "Description") }}
+        {{ form_widget(form.description) }}               
+        {{ form_errors(form.description) }}
+    </div>
+
+    <div>
+        {{ form_label(form.ordre, "Ordre d'affichage") }}
+        {{ form_widget(form.ordre) }}      
+        {{ form_errors(form.ordre) }}
+    </div>
+
+    <p>
+    	<button type="submit">Valider</button>
+    </p>
+</form>  
+
+
+
+  <a class="retour" href="{{ path('adminMenu') }}">Retour à la liste des menus</a>
+</div>
+
+              
+{% endblock %}

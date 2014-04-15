@@ -1,0 +1,129 @@
+{% extends "GaudruereGiteBundle::layouts/gaudruerebaselayout.html.twig" %}
+
+{% block content %}
+<div class="doublepage">
+
+<div class="reservation-navigation">
+  <h2>Formulaire de réservation</h2>
+	<form id="formResa" method="post" action="reservation/ajouterReservation"> 
+  
+    	<!-- ligne1 : du ... au .... -->
+        <div class="ligneFormulaire">
+    		<label class="gauche obligatoire" for="datePickerDateDebut"><em>*&nbsp;</em>Du</label>
+    		<input id="datePickerDateDebut" name="datePickerDateDebut" type="text" readonly="true">
+    		<label for="datePickerDateFin">au</label>
+    		<input id="datePickerDateFin" name="datePickerDateFin" type="text" readonly="true">
+	    	<label class="error" for="datePickerDateDebut" generated="true"></label>
+	    	<label class="error" for="datePickerDateFin" generated="true"></label>
+	    	<label class="masquerMessage" id="labelConflitDates" for="conflitDates" generated="false">Les dates du séjour empiètent sur une réservation existante.</label>
+    	</div>
+    	
+    	<!-- ligne 2 à 5 : pour X adulte(s), Y enfant(s) et Z bébé(s) -->
+    	<div>
+    	  <div class="ligneFormulaire">
+    	  	<label class="gauche obligatoire" for="sliderNbreAdultes"><em>*&nbsp;</em>Pour</label>
+      		<div id="sliderNbreAdultes"></div>    		
+      		<label id="sliderNbAdultes"><b>1&nbsp;</b></label>
+      		<label for="sliderNbreEnfants">adulte(s)</label>
+      		<input id="nbAdultes" name="nbAdultes" type="hidden" value="1">
+    	  </div>
+    	  <div class="ligneFormulaire">
+      		<div id="sliderNbreEnfants"></div>
+      		<label id="sliderNbEnfants"><b>0&nbsp;</b></label>
+      		<label for="sliderNbreBebes">enfant(s)</label>
+      		<input id="nbEnfants" name="nbEnfants" type="hidden" value="0">
+    	  </div>
+    	  <div class="ligneFormulaire">
+      		<div id="sliderNbreBebes"></div>
+      		<label id="sliderNbBebes"><b>0&nbsp;</b></label>
+      		<label>bébé(s)</label>
+      		<input id="nbBebes" name="nbBebes" type="hidden" value="0">
+    	  </div>
+    	</div>
+    	
+    	
+    	<!-- ligne3 : * Nom (avec le titre) -->
+    	<div class="separationFormulaire ligneFormulaire">
+    		<label class="gauche obligatoire" for="selectTitre"><em>*&nbsp;</em>Nom</label>
+    		<select id="selectTitre" name="selectTitre"><option value="MR">M.</option><option value="MME">Mme</option></select>
+    		<input id="nom" name="nom" type="text">
+    	</div>
+
+    	<!-- ligne 4 : * Prénom -->
+    	<div class="ligneFormulaire">
+    		<label class="gauche obligatoire" for="prenom"><em>*&nbsp;</em>Pr&eacute;nom</label>
+    		<input id="prenom" name="prenom" type="text">
+    	</div>
+
+    	<!-- ligne 5 : * Rue -->
+    	<div class="ligneFormulaire separationFormulaire">
+    		<label class="gauche" for="rue1">Rue</label>
+    		<input id="rue1" name="rue1" type="text">
+    	</div>
+
+    	<!-- ligne 6 : rue2 -->
+    	<div class="ligneFormulaire">
+    		<input id="rue2" name="rue2" type="text">
+    	</div>
+
+		<!-- ligne 7 : rue3 -->
+    	<div class="ligneFormulaire">
+    		<input id="rue3" name="rue3" type="text">
+    	</div>
+    	
+    	<!-- ligne 8 : * CP/Ville -->
+    	<div class="ligneFormulaire">
+    		<label class="gauche obligatoire" for="codePostal"><em>*&nbsp;</em>CP/Ville</label>
+    		<input id="codePostal" name="codePostal" type="text">
+    		<input id="ville" name="ville" type="text">
+    		<label class="error" for="codePostal" generated="true"></label>
+	    	<label class="error" for="ville" generated="true"></label>
+    	</div>
+    	
+    	
+    	<!-- ligne 9 : tel -->
+    	<div class="ligneFormulaire separationFormulaire">
+    		<label class="gauche obligatoire" for="tel">*&nbsp;T&eacute;l</label>
+    		<input id="tel" name="tel" type="text">
+    	</div>
+    	
+    	<!-- ligne 10 : email -->
+    	<div class="ligneFormulaire">
+    		<label class="gauche obligatoire" for="email">Email</label>
+    		<input id="email" name="email" type="text">
+    	</div>
+    	
+    	<!-- ligne 11 : commentaire -->
+    	<div class="ligneFormulaire">
+    		<label class="gauche" for="commentaire">Note</label>
+    		<textarea id="commentaire" name="commentaire"></textarea>
+    	</div>
+    	
+    	<div class="ligneFormulaire ligneBtnReserver">
+    		<input class="submit" type="submit" id="btnReserver" value="R&eacute;server" />
+    	</div>
+	</form>
+</div>
+
+<div class="calendrier-content">
+  <h2>Calendrier des disponibilités</h2>  
+  <div class="legende">
+  	  <!-- mise en place de la légende -->
+  	  <label class="legendeTitre">Légende :</label>
+  	  
+  	  <div class="ligneModele">
+  	  	<div class="modele calendrierJourReserveJournee"></div><label>Chambre d'hôtes non disponible</label>
+  	  </div>
+  	  <div class="ligneModele">
+  	  	<div class="modele calendrierJourDemandeReservationJournee"></div><label>Votre demande de réservation actuelle</label>
+  	  </div>
+  </div>   
+
+  <div id="internal-calendrier-content"> 
+	  <!-- integration calendrier.html.twig -->
+	  {% include 'GaudruereGiteBundle::Reservation/calendrier.html.twig' %}
+  </div>
+</div>
+</div>
+
+{% endblock %}

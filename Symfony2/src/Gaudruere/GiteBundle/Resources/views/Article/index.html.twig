@@ -1,0 +1,34 @@
+{% extends "GaudruereGiteBundle::layouts/gaudruerebaselayout.html.twig" %}
+
+{% block content %}  
+<div class="doublepage">
+<div class="article-navigation">{{ sousmenus | printSubTree(titreMenu) | raw }}</div>
+<div class="article-content">
+{% for article in articles %}
+    <div>
+      <h2>{{ article.getTitre() }}</h2>
+      {% if article.getTailleImage() != 'N' %}
+          <img class="
+          {% if article.getBordureImage() == 'A' %}    
+          bordure 
+          {% endif %}
+          {% if article.getPositionImage() == 'G' %}    
+          gauche   
+          {% else %}
+          droite    
+          {% endif %}
+          {% if article.getTailleImage() == 'P' %}
+          petit     
+          {% elseif article.getTailleImage() == 'M' %}
+          moyen  
+          {% elseif article.getTailleImage() == 'G' %}
+          grand 
+          {% endif %}      
+          " src="{{ asset('uploads/images/' ~ article.id ~ '/' ~ article.cheminPhoto) }}" alt="Photo absente" />
+     {% endif %}      
+      {{ article.getDescription()|raw }}
+    </div>
+{% endfor %}
+</div>
+</div>
+{% endblock %}

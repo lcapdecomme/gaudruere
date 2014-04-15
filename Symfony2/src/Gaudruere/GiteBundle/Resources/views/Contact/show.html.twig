@@ -1,0 +1,47 @@
+{% extends "GaudruereGiteBundle::layouts/gaudruerebaselayout.html.twig" %}
+
+{% block content %} 
+  {% block logocontent %}  <a class="logoadmin" href="{{ path('adminGaudruere') }}"></a>{% endblock %}
+<div class="admin">     
+
+<h2>Contact</h2>
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Nom</th>
+            <td>{{ entity.nom }}</td>
+        </tr>
+        <tr>
+            <th>Date</th>
+            <td>{{ entity.date|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>{{ entity.email }}</td>
+        </tr>
+        <tr>
+            <th>Message</th>
+            <td>{{ entity.message|raw }}</td>
+        </tr>
+    </tbody>
+</table>
+
+  
+  <form action="{{ path('adminContact_delete', { 'id': entity.id }) }}" method="post">
+      {{ form_widget(delete_form) }}
+      <p>
+        <button type="submit" onclick="return confirm('Supprimer cet objet ?');">Supprimer ce contact</button>
+      </p>
+  </form>
+  
+
+<a class="retour" href="{{ path('adminContact') }}">Retour à la liste des contacts</a>
+</div>
+
+              
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends "GaudruereGiteBundle::layouts/gaudruerebaselayout.html.twig" %}
+
+{% block content %} 
+<div class="admin">     
+
+  {% block logocontent %}  <a class="logoadmin" href="{{ path('adminGaudruere') }}"></a>{% endblock %}
+  <h2>Création d'un article</h2>
+
+{{ tinymce_init() }}
+
+<form action="{{ path('adminArticle_create') }}" method="post" {{ form_enctype(form) }}>
+    <!-- Les erreurs générales du formulaire. -->
+    {{ form_errors(form) }}
+    
+    <div>
+        {{ form_label(form.titre, "Titre de l'article") }}
+        {{ form_widget(form.titre) }}                     
+        {{ form_errors(form.titre) }}
+    </div>
+    
+    <div>
+        {{ form_label(form.description, "Description") }}
+        {{ form_widget(form.description) }}               
+        {{ form_errors(form.description) }}
+    </div>
+
+    {% if entity.cheminPhoto != "" %}
+    <div>
+        <img src="{{ asset('uploads/images/' ~ entity.id ~ '/' ~ entity.cheminPhoto) }}" alt="Image"/>
+    </div>
+    {% endif %}
+    
+    <div>
+        {{ form_label(form.fichierUpload, "Photo") }}
+        {{ form_widget(form.fichierUpload, { 'attr': {'size': '75'} }) }} 
+        {{ form_errors(form.fichierUpload) }}
+    </div>
+    
+    <div>
+        {{ form_label(form.tailleImage, "Affichage") }}
+        {{ form_widget(form.tailleImage) }} 
+        {{ form_errors(form.tailleImage) }}
+    </div>
+    
+    <div>
+        {{ form_label(form.positionImage, "Position de l'image") }}
+        {{ form_widget(form.positionImage) }} 
+        {{ form_errors(form.positionImage) }}
+    </div>
+    
+    <div>
+        {{ form_label(form.bordureImage, "Bordure sur l'image") }}
+        {{ form_widget(form.bordureImage) }} 
+        {{ form_errors(form.bordureImage) }}
+    </div>
+       
+    <div>
+        {{ form_label(form.ordre, "Ordre d'affichage") }}
+        {{ form_widget(form.ordre) }}      
+        {{ form_errors(form.ordre) }}
+    </div>
+    
+    <div>
+        {{ form_label(form.menu, "Menu associé ") }}
+        {{ form_widget(form.menu) }}       
+        {{ form_errors(form.menu) }}
+    </div>
+
+    <p>
+    	<button type="submit">Valider</button>
+    </p>
+</form>  
+
+
+  <a class="retour" href="{{ path('adminArticle') }}">Retour à la liste des articles</a>
+</div>
+
+              
+{% endblock %}

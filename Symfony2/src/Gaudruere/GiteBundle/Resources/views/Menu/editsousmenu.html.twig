@@ -1,0 +1,64 @@
+{% extends "GaudruereGiteBundle::layouts/gaudruerebaselayout.html.twig" %}
+
+{% block content %} 
+  {% block logocontent %}  <a class="logoadmin" href="{{ path('adminGaudruere') }}"></a>{% endblock %}
+<div class="admin">     
+
+  <h2>Modification du sous-menu  : {{ entity.titre }} ({{ entity.id }})</h2>
+
+
+<form action="{{ path('adminSousMenu_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+    {{ form_errors(edit_form) }}
+    
+    <div>
+        {{ form_label(edit_form.titre, "Nom du sous-menu") }}
+        {{ form_errors(edit_form.titre) }}
+        {{ form_widget(edit_form.titre) }}
+    </div>
+
+    <div>
+        {{ form_label(edit_form.fichierUpload, "Vignette") }}
+        <img  style="width:150px" src="{{ asset('uploads/vignettes/' ~ entity.id ~ '/' ~ entity.cheminPhoto) }}" alt="{{ entity.cheminPhoto }}" title="{{ entity.cheminPhoto }}" />
+        {{ form_errors(edit_form.fichierUpload) }}
+    </div>    
+        
+    <div>
+        {{ form_label(edit_form.fichierUpload, "Photo") }}
+        {{ form_widget(edit_form.fichierUpload, { 'attr': {'size': '75'} }) }} 
+        {{ form_errors(edit_form.fichierUpload) }}
+    </div>
+          
+    <div>
+        {{ form_label(edit_form.ordre, "Ordre") }}
+        {{ form_errors(edit_form.ordre) }}
+        {{ form_widget(edit_form.ordre) }}
+    </div>
+      
+
+    <div>
+        {{ form_label(edit_form.ordre, "Menu parent") }}
+        {{ form_errors(edit_form.menuParent) }}
+        {{ form_widget(edit_form.menuParent) }}
+    </div>     
+
+
+    <p>
+    	<button type="submit">Valider</button>
+    </p>
+</form>    
+
+
+
+  
+  <form action="{{ path('adminSousMenu_delete', { 'id': entity.id }) }}" method="post">
+      {{ form_widget(delete_form) }}
+      <p>
+        <button type="submit" onclick="return confirm('Supprimer cet objet ?');">Supprimer ce sous-menu</button>
+      </p>
+  </form>
+
+  <a class="retour" href="{{ path('adminMenu') }}">Retour à la liste des menus</a>
+</div>
+
+              
+{% endblock %}

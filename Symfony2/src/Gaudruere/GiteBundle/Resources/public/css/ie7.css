@@ -1,0 +1,83 @@
+li.article {
+display: inline;
+}
+#content .article-content {
+width: 67%;
+display: inline;
+}
+#content .article-navigation {
+display: inline;
+}
+#content .doublepage .article-content div {
+padding-left: 10px;
+padding-right: 10px;
+}
+#content .admin  a.retour {
+display:inline;
+}
+#content .admin form label {
+display: inline;
+}
+#content .admin #gaudruere_gitebundle_reservationtype_dateFin, #content .admin #gaudruere_gitebundle_reservationtype_dateDebut {
+display:inline;
+}
+#content .admin div.renduArticle {
+display: inline;
+}
+#content .contact-navigation {
+display: inline;
+}
+#content .contact-content {
+display: inline;
+}
+#content .acces-navigation {
+display: inline;
+}
+#content .acces-content {
+display: inline;   
+}
+#content .reservation-navigation {
+display: inline;
+}
+#content .reservation-navigation #sliderNbreAdultes, #content .reservation-navigation #sliderNbreEnfants, #content .reservation-navigation #sliderNbreBebes {
+display: inline;
+}
+#content .reservation-navigation #formResa label {
+display: inline;
+}
+#content .calendrier-content {
+display: inline;
+}
+#content .calendrier-content .calendrier {
+display: inline; /* on positionne inline pour IE7. */
+}
+#content .calendrier-content .calendrierSousTitre > * {
+display: inline; /* on positionne inline pour IE7. */
+}
+#content .calendrier-content .calendrierBody > * {
+display: inline; /* on positionne inline pour IE7. */
+}
+#content .calendrier-content .legende .modele {
+	display: inline;
+}
+#content .calendrier-content .calendrierFooterRoundedCorners {
+display:none;
+}
+calendrier.css (ligne 151)
+#content .calendrier-content .calendrierFooter {
+display:none;
+}
+#content .calendrier-content .calendrierTitre {
+background-color: #3E3E3E;
+color: white;
+font-family: Verdana,Arial,Helvetica,sans-serif;
+font-size: 17px;
+font-style: normal;
+height: 26px;
+text-align: center;
+width:100%;
+}
+calendrier.css (ligne 29)
+#content .calendrier-content .calendrierRoundedCorners {
+display:none;
+}

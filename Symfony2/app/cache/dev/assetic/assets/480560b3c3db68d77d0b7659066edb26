@@ -1,0 +1,201 @@
+#content .calendrier-content {
+zoom: 1;
+display: inline;
+display: inline-block;
+height: 100%;
+width: 69%;
+vertical-align: top;
+}
+#content .calendrier-content h2 {
+border-bottom: 5px solid;
+margin: 10px 0 20px;
+}
+#content .calendrier-content .calendriers {
+background: none repeat scroll 0 0 white;
+border: 1px solid #AABBCC;
+width: 980px;
+}
+#content .calendrier-content .calendrier {
+display: inline; /* on positionne inline pour IE7. */
+display: inline-block;
+overflow: hidden;
+margin: 5px;
+}
+
+#content .calendrier-content .calendrierRoundedCorners
+{
+border-radius: 10px 10px 0px 0px;
+-moz-border-radius: 10px 10px 0px 0px;
+-webkit-border-radius: 10px 10px 0px 0px;
+}
+
+#content .calendrier-content .calendrierTitre {
+background: -moz-linear-gradient(top,#706F6F 28%,#3E3E3E);
+background: -webkit-gradient(linear, left top, left bottom,color-stop(0.28, #706F6F),to(#3E3E3E));
+background: -o-linear-gradient(top, #706F6F 28%, #3E3E3E); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #706F6F 28%,#3E3E3E); /* IE10+ */
+background: linear-gradient(top, #706F6F 28%, #3E3E3E); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#706F6F', endColorstr='#3E3E3E',GradientType=0 ); /* IE6-7 + 9 */
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#706F6F', endColorstr='#3E3E3E')"; /* IE8 */
+color: white;
+text-align: center;
+height: 26px;
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 17px;
+font-style: normal;
+}
+
+#content .calendrier-content .calendrierSousTitre {  
+}
+
+#content .calendrier-content .calendrierBorderBody {
+border-left:1px solid #7890A8;
+border-right:1px solid #7890A8;
+}
+
+/** CalendrierJourSemaine */
+#content .calendrier-content .calendrierSousTitre > * {
+zoom:1;
+display: inline; /* on positionne inline pour IE7. */
+display: inline-block;
+background: #CEC9AB;
+width: 30px;
+height: 20px; 
+text-align: center;
+margin: 0;
+padding: 0;
+border:0;
+font-family: Verdana, Arial, Helvetica, sans-serif;
+line-height: 125%; 
+font-size: 14px;
+font-style: normal;
+}
+
+#content .calendrier-content .calendrierJourSemaineWeekEnd {
+background: #E8E8E8;
+color: #575757;
+} 
+
+#content .calendrier-content .calendrierBody {
+background: white;
+width: 210px;
+}
+
+/** calendrierJour */
+#content .calendrier-content .calendrierBody > * {
+zoom: 1;
+display: inline; /* on positionne inline pour IE7. */
+display: inline-block;
+width: 30px;
+
+font-family: Verdana, Arial, Helvetica, sans-serif;
+line-height: 140%;
+font-size: 14px;
+font-style: normal;
+text-align: center;
+
+-moz-user-select: none;
+-webkit-user-select: none;
+user-select: none;
+}
+
+#content .calendrier-content .calendrierJourWeekEnd {
+background: #E5E1C7;
+}
+
+#content .calendrier-content .calendrierJourNonReserve {
+-moz-user-select: toggle;
+-webkit-user-select: toggle;
+user-select: toggle; 
+}
+
+#content .calendrier-content .calendrierJourReserveMatin {
+	background-image: url('../../bundles/gaudrueregite/css/matin.png'); 
+}
+
+#content .calendrier-content .calendrierJourReserveSoir {
+	background-image: url('../../bundles/gaudrueregite/css/soir.png'); 
+}
+
+#content .calendrier-content .calendrierJourReserveJournee {
+	background: #FFA39D;
+}
+
+#content .calendrier-content .calendrierJourDemandeReservationMatin {
+	background-image: url('../../bundles/gaudrueregite/css/matinDemandeReservation.png'); 
+}
+
+#content .calendrier-content .calendrierJourDemandeReservationSoir {
+	background-image: url('../../bundles/gaudrueregite/css/soirDemandeReservation.png'); 
+}
+
+#content .calendrier-content .calendrierJourDemandeReservationJournee {
+	background: #FF7F27;
+}
+
+#content .calendrier-content .calendrierJourDemandeReservationMatinEtReservationSoir {
+	background-image: url('../../bundles/gaudrueregite/css/demandeReservationMatinEtReservationSoir.png'); 
+}
+
+#content .calendrier-content .calendrierJourReservationMatinEtDemandeReservationSoir {
+	background-image: url('../../bundles/gaudrueregite/css/reservationMatinEtDemandeReservationSoir.png'); 
+}
+
+
+
+
+
+
+#content .calendrier-content .calendrierFooter {
+height:10px;
+overflow: hidden;
+
+border-left: 1px solid #7890A8;
+border-right: 1px solid #7890A8;
+border-bottom: 1px solid #7890A8;
+}
+
+#content .calendrier-content .calendrierFooterRoundedCorners
+{
+border-radius: 0px 0px 10px 10px;
+-moz-border-radius: 0px 0px 10px 10px;
+-webkit-border-radius: 0px 0px 10px 10px;
+}
+
+#content .calendrier-content .calendrierFooterInner {
+height:100%;
+background: -moz-linear-gradient(top,#706F6F 28%,#3E3E3E);
+background: -webkit-gradient(linear, left top, left bottom,color-stop(0.28, #706F6F),to(#3E3E3E));
+background: -o-linear-gradient(top, #706F6F 28%, #3E3E3E); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #706F6F 28%,#3E3E3E); /* IE10+ */
+background: linear-gradient(top, #706F6F 28%, #3E3E3E); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#706F6F', endColorstr='#3E3E3E',GradientType=0 );  /* IE6-8 + 9 */
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#706F6F', endColorstr='#3E3E3E')"; /* IE8 */
+}
+
+#content .calendrier-content .legende {
+	margin: 30px;
+}
+
+#content .calendrier-content .legende label.legendeTitre {
+	font-weight: bold;
+	display: block;
+}
+
+#content .calendrier-content .legende .ligneModele
+{
+	margin-top: 10px;
+	margin-left: 30px;
+}
+
+#content .calendrier-content .legende .modele 
+{
+	zoom: 1;
+	display: inline;
+	display: inline-block;
+	
+	width: 15px;
+	height: 15px;
+	margin-right: 15px;
+	vertical-align: -2px;
+}

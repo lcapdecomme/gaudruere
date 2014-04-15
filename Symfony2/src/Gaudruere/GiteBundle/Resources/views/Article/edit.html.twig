@@ -1,0 +1,108 @@
+{% extends "GaudruereGiteBundle::layouts/gaudruerebaselayout.html.twig" %}
+
+{% block content %} 
+
+<div class="admin">     
+
+  {% block logocontent %}  <a class="logoadmin" href="{{ path('adminGaudruere') }}"></a>{% endblock %}
+  <h2>Modification de l'article : {{ entity.titre }} ({{ entity.id }})</h2>
+
+{{ tinymce_init() }}
+
+<form action="{{ path('adminArticle_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+    <!-- Les erreurs générales du formulaire. -->
+    {{ form_errors(edit_form) }}
+    
+    <div>
+        {{ form_label(edit_form.titre, "Titre de l'article") }}
+        {{ form_widget(edit_form.titre) }}                     
+        {{ form_errors(edit_form.titre) }}
+    </div>
+    
+    <div>
+        {{ form_label(edit_form.description, "Description") }}
+        {{ form_widget(edit_form.description) }}               
+        {{ form_errors(edit_form.description) }}
+    </div>
+    
+    <div>
+        {{ form_label(edit_form.fichierUpload, "Photo") }}
+        {{ form_widget(edit_form.fichierUpload, { 'attr': {'size': '75'} }) }} 
+        {{ form_errors(edit_form.fichierUpload) }}
+    </div>
+    
+    <div>
+        {{ form_label(edit_form.tailleImage, "Affichage") }}
+        {{ form_widget(edit_form.tailleImage) }} 
+        {{ form_errors(edit_form.tailleImage) }}
+    </div>
+    
+    <div>
+        {{ form_label(edit_form.positionImage, "Position de l'image") }}
+        {{ form_widget(edit_form.positionImage) }} 
+        {{ form_errors(edit_form.positionImage) }}
+    </div>
+    
+    <div>
+        {{ form_label(edit_form.bordureImage, "Bordure sur l'image") }}
+        {{ form_widget(edit_form.bordureImage) }} 
+        {{ form_errors(edit_form.bordureImage) }}
+    </div>
+       
+    <div>
+        {{ form_label(edit_form.ordre, "Ordre d'affichage") }}
+        {{ form_widget(edit_form.ordre) }}      
+        {{ form_errors(edit_form.ordre) }}
+    </div>
+    
+    <div>
+        {{ form_label(edit_form.menu, "Menu associé ") }}
+        {{ form_widget(edit_form.menu) }}       
+        {{ form_errors(edit_form.menu) }}
+    </div>
+
+            
+    <h2>Rendu</h2>
+    <div class="renduArticle">
+
+        <h2>{{ entity.getTitre() }}</h2>
+        {% if entity.getTailleImage() != 'N' %}
+            <img class="
+            {% if entity.getBordureImage() == 'A' %}    
+            bordure 
+            {% endif %}
+            {% if entity.getPositionImage() == 'G' %}    
+            gauche   
+            {% else %}
+            droite    
+            {% endif %}
+            {% if entity.getTailleImage() == 'P' %}
+            petit     
+            {% elseif entity.getTailleImage() == 'M' %}
+            moyen  
+            {% elseif entity.getTailleImage() == 'G' %}
+            grand 
+            {% endif %}      
+            " src="{{ asset('uploads/images/' ~ entity.id ~ '/' ~ entity.cheminPhoto) }}" alt="{{ entity.cheminPhoto }}" title="{{ entity.cheminPhoto }}" />
+       {% endif %}     
+       {{ entity.getDescription()|raw }}
+    </div>
+
+    <p>
+    	<button type="submit">Valider</button>
+    </p>    
+</form>    
+
+<form action="{{ path('adminArticle_delete', { 'id': entity.id }) }}" method="post">
+    {{ form_widget(delete_form) }}                                
+    <p>
+      <button type="submit" onclick="return confirm('Supprimer cet objet ?');" >Supprimer cet article</button>
+    </p>
+</form>
+
+<a class="retour" href="{{ path('adminArticle') }}">Retour à la liste des articles</a>
+
+</div>
+
+              
+{% endblock %}

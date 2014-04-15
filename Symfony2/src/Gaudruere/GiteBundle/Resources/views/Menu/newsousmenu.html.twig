@@ -1,0 +1,46 @@
+{% extends "GaudruereGiteBundle::layouts/gaudruerebaselayout.html.twig" %}
+
+{% block content %} 
+  {% block logocontent %}  <a class="logoadmin" href="{{ path('adminGaudruere') }}"></a>{% endblock %}
+<div class="admin">     
+
+  <h2>Création d'un sous-menu</h2>
+
+<form action="{{ path('adminSousMenu_create') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_errors(form) }}
+    
+    <div>
+        {{ form_label(form.titre, "Nom du sous-menu") }}
+        {{ form_errors(form.titre) }}
+        {{ form_widget(form.titre) }}
+    </div>
+
+    <div>
+        {{ form_label(form.fichierUpload, "Photo") }}
+        {{ form_widget(form.fichierUpload, { 'attr': {'size': '75'} }) }} 
+        {{ form_errors(form.fichierUpload) }}
+    </div>
+          
+    <div>
+        {{ form_label(form.ordre, "Ordre") }}
+        {{ form_errors(form.ordre) }}
+        {{ form_widget(form.ordre) }}
+    </div>
+      
+
+    <div>
+        {{ form_label(form.ordre, "Menu parent") }}
+        {{ form_errors(form.menuParent) }}
+        {{ form_widget(form.menuParent) }}
+    </div>     
+
+    <p>
+        <button type="submit">Valider</button>
+    </p>
+</form>
+
+  <a class="retour" href="{{ path('adminMenu') }}">Retour à la liste des menus</a>
+</div>
+
+              
+{% endblock %}

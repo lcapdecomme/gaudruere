@@ -1,0 +1,209 @@
+#content .reservation-navigation {
+zoom: 1;
+display: inline;
+display: inline-block;
+height: 100%;
+margin: 0;
+width:30%;
+vertical-align: top;
+}
+#content .obligatoire {
+font-weight:bold;
+}
+#content .reservation-navigation h2 {
+color: #6B6565;
+font-weight: bold;
+padding: 6px 10px 30px;
+text-align: center;
+}
+#content .reservation-navigation #datePickerDateDebut, #content .reservation-navigation #datePickerDateFin
+{
+width: 72px;
+}
+#content .reservation-navigation #sliderNbreAdultes, #content .reservation-navigation #sliderNbreEnfants, #content .reservation-navigation #sliderNbreBebes
+{
+zoom: 1;
+display: inline;
+display: inline-block;
+width: 35px;
+margin-left: 9px;
+margin-right: 10px;
+vertical-align: -2px;
+}
+
+#content .reservation-navigation .ui-state-default
+{
+	background: #E18B14;
+}
+
+#content .reservation-navigation .ui-slider .ui-slider-handle
+{
+	 width: 0.7em;
+}
+
+#content .reservation-navigation .ui-slider-horizontal .ui-slider-range-min {
+    border: 2px solid transparent !important;
+    left: -8px;
+}
+
+#content .reservation-navigation .ui-slider-horizontal .ui-slider-range {
+    top: -2px;
+}
+
+#content .reservation-navigation #sliderNbreAdultes a, #content .reservation-navigation #sliderNbreEnfants a, #content .reservation-navigation #sliderNbreBebes a
+{
+	cursor: pointer; 
+}
+
+#formResa {
+	padding: 0px 5px 0px;	
+}
+
+.ui-datepicker
+{
+	z-index: 10 !important;
+}
+
+#sliderNbreEnfants, #sliderNbreBebes
+{
+	margin-left: 90px !important;
+}
+
+#content .reservation-navigation .ligneFormulaire
+{
+	margin-bottom:10px;
+}
+
+#content .reservation-navigation .separationFormulaire
+{
+	margin-top:25px;
+}
+
+#content .reservation-navigation #formResa label
+{
+	zoom: 1;
+	display: inline;
+	display: inline-block;
+}
+
+#content .reservation-navigation #formResa label.gauche
+{
+	text-align: right;
+	width: 76px;
+	vertical-align:top;
+	padding-top: 2px;
+}
+
+#content .reservation-navigation #formResa label.error
+{
+	display:block;
+	text-align: right;
+	color: red;
+	font-size: 11px;
+	padding-left: 20px;
+	padding-right: 10px;
+	padding-top: 2px;
+}
+
+#content .reservation-navigation #formResa input[type="text"], #content .reservation-navigation #formResa textarea
+{
+	border-radius: 5px;
+	padding: 0px 5px 0px 5px;
+}
+
+#content .reservation-navigation #formResa select 
+{
+	border-radius: 5px;
+	padding: 0px 0px 0px 0px;
+	width: 60px;
+}
+
+
+#content .reservation-navigation #formResa #nom
+{
+	width: 115px;	
+	text-transform: uppercase;
+}	
+
+#content .reservation-navigation #formResa #prenom, 
+#content .reservation-navigation #formResa #rue1, 
+#content .reservation-navigation #formResa #rue2, 
+#content .reservation-navigation #formResa #rue3, 
+#content .reservation-navigation #formResa #tel, 
+#content .reservation-navigation #formResa #email, 
+#content .reservation-navigation #formResa #commentaire
+{
+	width: 180px;
+}
+
+#content .reservation-navigation #formResa #rue2, #content .reservation-navigation #formResa #rue3
+{
+	margin-left: 80px;	
+}
+
+#content .reservation-navigation #formResa #codePostal
+{
+	width: 39px;	
+}
+
+#content .reservation-navigation #formResa #ville {
+	width: 122px;	
+	text-transform: uppercase;
+}
+
+#content .reservation-navigation #formResa #btnReserver[disabled]
+{
+	color: #000000;
+}
+
+
+#content .reservation-navigation #formResa .ligneBtnReserver
+{
+	margin-left: 72px;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 20px;	
+}
+
+#content .reservation-navigation #formResa .submit {
+	border-color: #CEC9AB;
+    border-radius: 3px 3px 3px 3px;
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 7px;
+    width: auto;	
+}
+
+#content .reservation-navigation #formResa #labelConflitDates
+{
+	color: red;
+    font-size: 11px;
+    padding-left: 20px;
+    padding-right: 10px;
+    padding-top: 2px;
+    text-align: right;	
+}
+
+#content .reservation-navigation #formResa #labelConflitDates.masquerMessage
+{
+	display: none !important;	
+}
+
+#content .calendrier-content #reservation-reponse
+{
+	padding: 20px !important;
+}
+
+#content .calendrier-content #reservation-reponse > h1
+{
+	margin-bottom: 3px !important;	
+}
+
+#content .calendrier-content #reservation-reponse > h2
+{
+	border: 0 !important;
+	margin: 5px 0 20px !important;
+}

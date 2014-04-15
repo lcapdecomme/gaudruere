@@ -1,0 +1,38 @@
+{% extends "GaudruereGiteBundle::layouts/gaudruerebaselayout.html.twig" %}
+
+{% block content %}
+
+  {% block logocontent %}  <a class="logoadmin" href="{{ path('adminGaudruere') }}"></a>{% endblock %}
+  <div class="admin"> 
+
+      <h2>Administration du site</h2> 
+      <a class="logoadmin" href="{{ path('logoutAdmin') }}">Déconnexion</a>    
+      <ul class="articles">
+          <li class="article">
+              <a href="{{ path('adminMenu') }}"><p class="optionadmin">Les menus</p></a>
+          </li>
+          <li class="article">
+              <a href="{{ path('adminArticle') }}"><p class="optionadmin">Les articles</p></a>
+          </li>
+          <li class="article">
+              <a href="{{ path('adminReservation') }}"><p class="optionadmin">Demande de réservations</p></a>
+          </li>  
+          <li class="article">
+              <a href="{{ path('adminArticleContact_edit') }}"><p class="optionadmin">La page contact</p></a>
+          </li>
+          <li class="article">
+              <a href="{{ path('adminArticleAcces_edit') }}"><p class="optionadmin">La page accès</p></a>
+          </li>
+          <li class="article">
+              <a href="{{ path('adminParametreGeneral_edit') }}"><p class="optionadmin">Paramétrage général</p></a>
+          </li> 
+          <li class="article">
+              <a href="{{ path('adminContact') }}"><p class="optionadmin">Messages reçus</p></a>
+          </li>
+          <li class="article">
+              <a href="{{ path('adminPhotosAccueil') }}"><p class="optionadmin">Photos Accueil</p></a>
+          </li>
+      </ul>
+  </div>
+{% endblock %}
+                                   

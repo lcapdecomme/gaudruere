@@ -1,0 +1,89 @@
+{% extends "GaudruereGiteBundle::layouts/htmlbaselayout.html.twig" %}
+
+{% block title "Chambre d'hôte de la Gaudruère - situé à Jupilles, près du Mans" %}
+
+{% block styles %}
+	{% if url_du_site != "localhost"  %}  
+		<link rel="stylesheet" href="/bundles/gaudrueregite/css/acces.css" type="text/css"/>
+		<link rel="stylesheet" href="/bundles/gaudrueregite/css/article.css" type="text/css"/>
+		<link rel="stylesheet" href="/bundles/gaudrueregite/css/articles.css" type="text/css"/>
+		<link rel="stylesheet" href="/bundles/gaudrueregite/css/calendrier.css" type="text/css"/>
+		<link rel="stylesheet" href="/bundles/gaudrueregite/css/contact.css" type="text/css"/>
+		<link rel="stylesheet" href="/bundles/gaudrueregite/css/gaudruere.css" type="text/css"/>  
+		<link rel="stylesheet" href="/bundles/gaudrueregite/css/jquery.jquery-ui.css" type="text/css"/>
+		<link rel="stylesheet" href="/bundles/gaudrueregite/css/menu.css" type="text/css"/>
+		<link rel="stylesheet" href="/bundles/gaudrueregite/css/slideshow.css" type="text/css"/>
+		<link rel="stylesheet" href="/bundles/gaudrueregite/css/reservation.css" type="text/css"/>
+		<link rel="stylesheet" href="/bundles/gaudrueregite/css/admin.css" type="text/css"/>
+		<!--[if IE 7]>
+          <link rel="stylesheet" href="/bundles/gaudrueregite/css/ie7.css" type="text/css"/>
+    <![endif]-->
+  {% else %}    
+		<link rel="stylesheet" href="/gaudruere/web/bundles/gaudrueregite/css/acces.css" type="text/css"/>
+		<link rel="stylesheet" href="/gaudruere/web/bundles/gaudrueregite/css/article.css" type="text/css"/>
+		<link rel="stylesheet" href="/gaudruere/web/bundles/gaudrueregite/css/articles.css" type="text/css"/>
+		<link rel="stylesheet" href="/gaudruere/web/bundles/gaudrueregite/css/calendrier.css" type="text/css"/>
+		<link rel="stylesheet" href="/gaudruere/web/bundles/gaudrueregite/css/contact.css" type="text/css"/>
+		<link rel="stylesheet" href="/gaudruere/web/bundles/gaudrueregite/css/gaudruere.css" type="text/css"/>  
+		<link rel="stylesheet" href="/gaudruere/web/bundles/gaudrueregite/css/jquery.jquery-ui.css" type="text/css"/>
+		<link rel="stylesheet" href="/gaudruere/web/bundles/gaudrueregite/css/menu.css" type="text/css"/>
+		<link rel="stylesheet" href="/gaudruere/web/bundles/gaudrueregite/css/slideshow.css" type="text/css"/>
+		<link rel="stylesheet" href="/gaudruere/web/bundles/gaudrueregite/css/reservation.css" type="text/css"/>
+		<link rel="stylesheet" href="/gaudruere/web/bundles/gaudrueregite/css/admin.css" type="text/css"/>
+		<!--[if IE 7]>    
+          <link rel="stylesheet" href="/gaudruere/web/bundles/gaudrueregite/css/ie7.css" type="text/css"/>
+    <![endif]-->
+  {% endif %}       
+{% endblock %}
+{% block js %}
+	{% if url_du_site != "localhost"  %}  
+      <script src="/bundles/gaudrueregite/js/jquery.min.js" type="text/javascript"></script>
+      <script src="/bundles/gaudrueregite/js/jquery.easing.js" type="text/javascript"></script>
+      <script src="/bundles/gaudrueregite/js/jquery.cross-slide.min.js" type="text/javascript"></script>
+      <script src="/bundles/gaudrueregite/js/jquery.form.js" type="text/javascript"></script>
+      <script src="/bundles/gaudrueregite/js/jquery.validate.min.js" type="text/javascript"></script>
+      <script src="/bundles/gaudrueregite/js/jquery.jquery-ui.min.js" type="text/javascript"></script>
+      <script src="/bundles/gaudrueregite/js/reservation.js" type="text/javascript"></script>
+      <script src="/bundles/gaudrueregite/js/scriptsServer.js" type="text/javascript"></script>   
+      <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDhrrOrqKAnKsoXzOwDl8Wld8JyM-9CMuk&amp;sensor=true" type="text/javascript"></script>  
+  {% else %}     
+    	{% javascripts
+    		'bundles/gaudrueregite/js/jquery.min.js'
+    		'bundles/gaudrueregite/js/jquery.easing.js'
+    		'bundles/gaudrueregite/js/jquery.cross-slide.min.js'
+    		'bundles/gaudrueregite/js/reservation.js'     
+    		'bundles/gaudrueregite/js/jquery.form.js'
+    		'bundles/gaudrueregite/js/jquery.validate.min.js'
+    		'bundles/gaudrueregite/js/jquery.jquery-ui.min.js'
+    		'bundles/gaudrueregite/js/reservation.js'
+    		'bundles/gaudrueregite/js/scriptsLocal.js'
+    	%}
+    	<script src="{{ asset_url }}" type="text/javascript"></script>
+    	{% endjavascripts %}         
+      <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDhrrOrqKAnKsoXzOwDl8Wld8JyM-9CMuk&amp;sensor=true" type="text/javascript"></script>      	
+  {% endif %}     
+{% endblock %}
+
+
+{% block bodycontent %}   
+	<div id="bandeau"></div>
+	<div id="page">
+      <div id="header" class="{{ stylepage }}">
+		    {% block logocontent %}  <a class="logo" href="{{ path('accueilGaudruere') }}">&nbsp;</a>{% endblock %}
+        <div id="menu">{{ menus | printTree(titreMenu) | raw }}</div>
+      </div>
+      
+      <div id="content">                                
+      {% block content %}<p>content</p>{% endblock %}           
+      </div>
+      
+      <div id="footer">
+      
+      <span id="contactfooter"><a href="{{ path('contactGaudruere') }}">Contact</a></span>
+      <span id="titrefooter">{{ parametres.phraseBandeau|raw }}</span>
+	  <span id="remerciementfooter">{{ parametres.phraseRemerciement|raw }}</span>
+      
+      </div>     
+  </div>
+
+{% endblock %}

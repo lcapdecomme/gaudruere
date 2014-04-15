@@ -1,0 +1,36 @@
+{% extends "GaudruereGiteBundle::layouts/gaudruerebaselayout.html.twig" %}
+
+{% block content %}  
+  {% block logocontent %}  <a class="logoadmin" href="{{ path('adminGaudruere') }}"></a>{% endblock %}
+<div class="admin">  
+
+<h2>Liste des contacts</h2>
+
+<table class="admin_records_list">
+    <thead>
+        <tr>
+            <th>Numéro</th>
+            <th>Nom</th>
+            <th>Date</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% set cpt = 1 %}
+    {% for entity in entities %}
+        <tr>
+            <td>{{ cpt }}</td>
+            {% set cpt = cpt + 1 %}
+
+            <td>{{ entity.nom }}</td>
+            <td>{% if entity.date %}{{ entity.date|date('Y-m-d H:i:s') }}{% endif%}</td>
+            <td>{{ entity.email }}</td>
+            <td><a href="{{ path('adminContact_show', { 'id': entity.id }) }}">Voir</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>     
+<a class="retour" href="{{ path('adminGaudruere') }}">Retour à la page d'administration</a>    
+</div>          
+{% endblock %}

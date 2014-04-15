@@ -1,0 +1,47 @@
+{% extends "GaudruereGiteBundle::layouts/gaudruerebaselayout.html.twig" %}
+
+{% block content %}  
+  {% block logocontent %}  <a class="logoadmin" href="{{ path('adminGaudruere') }}"></a>{% endblock %}
+<div class="admin">  
+
+<h2>Liste des réservations</h2>
+
+<table class="admin_records_list">
+    <thead>
+        <tr>
+            <th>Numéro</th>
+            <th>De</th>
+            <th>Au</th>
+            <th>Validée (O/N)</th>
+            <th>Titre</th>
+            <th>Nom</th>
+            <th>CP</th>
+            <th>Ville</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% set cpt = 1 %}
+    {% for entity in entities %}
+        <tr>
+            <td>{{ cpt }}</td>
+            {% set cpt = cpt + 1 %}
+            <td>{% if entity.dateDebut %}{{ entity.dateDebut|date('d/m/Y') }}{% endif%}</td>
+            <td>{% if entity.dateFin %}{{ entity.dateFin|date('d/m/Y') }}{% endif%}</td>
+            <td>{% if entity.reservationValidee == 1 %}
+                O
+            {% else %}
+                N
+            {% endif%}</td>
+            <td>{{ entity.titre }}</td>
+            <td>{{ entity.nom }}</td>
+            <td>{{ entity.codePostal }}</td>
+            <td>{{ entity.ville }}</td>       
+            <td><a href="{{ path('adminReservation_show', { 'id': entity.id }) }}">voir</a> /  <a href="{{ path('adminReservation_edit', { 'id': entity.id }) }}">modifier</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<a class="retour" href="{{ path('adminGaudruere') }}">Retour à la page d'administration</a>    
+</div>          
+{% endblock %}

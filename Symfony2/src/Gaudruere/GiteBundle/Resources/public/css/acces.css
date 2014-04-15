@@ -1,0 +1,36 @@
+#content #map_canvas
+{
+height: 532px;
+width: 646px;
+overflow: hidden;
+border: 10px solid white;
+}
+
+#content .acces-navigation {
+display: inline-block;
+height: 100%;
+margin: 0;
+width: 30%;
+vertical-align: top;
+}
+#content .acces-navigation > * {
+padding: 2px 15px 1px;
+}
+#content .acces-navigation ul li {
+margin-left : 5px;
+font-size: 1.1em;
+}
+#content .acces-navigation ul {
+margin-left : 12px;
+}
+
+#content .acces-content {
+display: inline-block;
+height: 100%;
+width: 69%;
+vertical-align: top;
+}
+#content .acces-content h2 {
+border-bottom: 5px solid;
+margin: 10px 0 20px;
+}

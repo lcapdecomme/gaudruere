@@ -1,0 +1,54 @@
+{% extends "GaudruereGiteBundle::layouts/gaudruerebaselayout.html.twig" %}
+
+{% block content %} 
+  {% block logocontent %}  <a class="logoadmin" href="{{ path('adminGaudruere') }}"></a>{% endblock %}
+<div class="admin">     
+
+  <h2>Modification du menu : {{ entity.titre }} ({{ entity.id }})</h2>
+  
+{{ tinymce_init() }}
+
+<form action="{{ path('adminMenu_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+    {{ form_errors(edit_form) }}
+    
+    <div>
+        {{ form_label(edit_form.titre, "Nom du menu") }}
+        {{ form_errors(edit_form.titre) }}
+        {{ form_widget(edit_form.titre) }}
+    </div>
+   
+    {% if entity.type == "articles" %}
+        <div>
+            {{ form_label(edit_form.description, "Description") }}
+            {{ form_errors(edit_form.description) }}
+            {{ form_widget(edit_form.description) }}
+        </div>
+    {% endif %}
+      
+    <div>
+        {{ form_label(edit_form.ordre, "Ordre") }}
+        {{ form_errors(edit_form.ordre) }}
+        {{ form_widget(edit_form.ordre) }}
+    </div>
+
+
+    <p>
+    	<button type="submit">Valider</button>
+    </p>
+</form>    
+
+
+
+  
+  <form action="{{ path('adminSousMenu_delete', { 'id': entity.id }) }}" method="post">
+      {{ form_widget(delete_form) }}
+      <p>
+        <button type="submit" onclick="return confirm('Supprimer cet objet ?');">Supprimer ce menu</button>
+      </p>
+  </form>
+
+  <a class="retour" href="{{ path('adminMenu') }}">Retour à la liste des menus</a>
+</div>
+
+              
+{% endblock %}

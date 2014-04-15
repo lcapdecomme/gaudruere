@@ -1,0 +1,122 @@
+#content .contact-navigation {
+display: inline-block;
+height: 100%;
+margin: 0;
+width:30%;
+vertical-align: top;
+}
+#content .contact-navigation > * {
+padding: 2px 15px 1px;
+}
+#content .contact-navigation h2 {
+color: #6B6565;
+font-weight: bold;
+line-height: 1.1em;
+padding: 6px 10px 30px;
+text-align: center;
+}
+#content .contact-navigation label {
+width: 100%;
+}
+#content .contact-navigation form div input, #content .contact-navigation form div textarea {
+font-weight: bold;
+width: 100%;
+margin-bottom:15px;
+}
+#content .contact-navigation ul {
+list-style: none outside none;
+}
+#content .contact-navigation ul li {
+font-size : 0.7em;
+color:red;
+}
+#content .contact-navigation .submit {
+border-color: #CEC9AB;
+border-radius: 3px 3px 3px 3px;
+border-style: solid;
+border-width: 1px;
+cursor: pointer;
+font-size: 10px;
+font-weight: bold;
+padding: 7px;
+text-transform: uppercase;
+width: auto;
+}
+#content .contact-content {
+zoom: 1;
+display: inline;
+display: inline-block;
+height: 100%;
+width: 69%;
+vertical-align: top;
+}
+#content .contact-content h2 {
+border-bottom: 5px solid;
+margin: 10px 0 20px;
+}
+#content .contact-content ul {
+float: left;
+list-style: none outside none;
+margin-left: 12px;
+width: 50%;
+}
+#content .contact-content ul li {
+margin-left : 12px;
+}
+#content .contact-content li.important {
+font-weight: bold;
+}
+#content .contact-content li.aere {
+padding: 10px 0;
+}
+#content .contact-content a, #content .contact-content a:visited, #content .contact-content a:active {
+text-decoration: none;
+color: #777777;
+font-weight: bold;
+}
+#content .contact-content a:hover,#content .contact-content ul li a.active:hover  {
+background:#E5AC62;
+}
+#content .contact-content .logo {
+background: url("logo-sarthe.png") no-repeat;
+float: left;
+height: 207px;
+width: 215px;
+}
+#content .contact-content p {
+float: left;
+padding-top:50px;
+width: 100%;
+}
+#content .doublepage .contact-content .contact p {
+padding:0px;
+width: 100%;
+} 
+#content .doublepage .contact-content .contact {
+width: 400px;       
+float: left;
+padding-left: 26px;
+}
+#content #contact-reponse
+{
+margin : 0 auto
+}
+#content #contact-reponse h1 {
+font-size: 1.6em;
+height: 50px;
+padding-bottom: 10px;
+padding-top: 40px;
+text-align: center;
+}
+#content #contact-reponse h2 {
+font-size: 1.3em;
+text-align: center;
+}
+#content #contact-reponse h3 {
+font-size: 1.4em;
+text-align: center;   
+padding-top: 40px;
+font-weight:bold;
+color: #5B5959;
+}
+

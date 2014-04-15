@@ -1,0 +1,72 @@
+{% extends "GaudruereGiteBundle::layouts/gaudruerebaselayout.html.twig" %}
+
+{% block content %} 
+<div class="admin">     
+
+  {% block logocontent %}  <a class="logoadmin" href="{{ path('adminGaudruere') }}"></a>{% endblock %}
+  <h2>Article : {{ entity.titre }} ({{ entity.id }})</h2>
+  
+  <table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Titre</th>
+            <td>{{ entity.titre }}</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>{{ entity.description|raw }}</td>
+        </tr>
+        
+        {% if entity.cheminPhoto != null %}
+        <tr>
+            <th>Cheminphoto</th>
+            <td>
+            {% if entity.getTailleImage() != 'N' %}
+                  <img class="
+                  {% if entity.getBordureImage() == 'A' %}    
+                  bordure 
+                  {% endif %}
+                  {% if entity.getPositionImage() == 'G' %}    
+                  gauche   
+                  {% else %}
+                  droite    
+                  {% endif %}
+                  {% if entity.getTailleImage() == 'P' %}
+                  petit     
+                  {% elseif entity.getTailleImage() == 'M' %}
+                  moyen  
+                  {% elseif entity.getTailleImage() == 'G' %}
+                  grand 
+                  {% endif %}      
+                  " src="{{ asset('uploads/images/' ~ entity.id ~ '/' ~ entity.cheminPhoto) }}" alt="{{ entity.cheminPhoto }}" title="{{ entity.cheminPhoto }}" />
+            {% endif %}  
+            </td>
+        </tr> 
+        {% endif %}      
+        <tr>
+            <th>Ordre</th>
+            <td>{{ entity.ordre }}</td>
+        </tr>
+    </tbody>
+
+  </table>
+
+  
+  <form action="{{ path('adminArticle_delete', { 'id': entity.id }) }}" method="post">
+      {{ form_widget(delete_form) }}
+      <p>
+          <button type="submit" onclick="return confirm('Supprimer cet objet ?');" >Supprimer cet article</button>
+      </p>
+  </form>
+  
+  <a class="retour" href="{{ path('adminArticle_edit', { 'id': entity.id }) }}">Modifier</a>
+  
+  <a class="retour" href="{{ path('adminArticle') }}">Retour à la liste des articles</a>
+</div>
+
+              
+{% endblock %}
