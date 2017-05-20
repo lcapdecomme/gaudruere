@@ -1,0 +1,7 @@
+  Alias /gaudruere "C:/projet/gr/gaudruere/symfony2/"
+    <Directory "C:/projet/gr/gaudruere/symfony2">
+        AllowOverride AuthConfig
+        Require local
+        ErrorDocument 403 /error/XAMPP_FORBIDDEN.html.var
+    </Directory>
+
