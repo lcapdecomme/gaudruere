@@ -116,7 +116,17 @@ class ReservationController extends GaudruereController
     {
      		// URL du site (utilisé pour générer des urls corrects 
         $p = $em->getRepository('GaudruereGiteBundle:Parametres')->findUniqueParametre();
-               	
+            
+        // Si pas de mail, on remplace par une chaine bidon
+        if (trim($r->getEmail())=='')   
+        {
+          $r->setEmail("pas_de_mail@gaudruere.fr");
+        }	
+  // Mail() transport
+    $transport = \Swift_MailTransport::newInstance();
+
+
+
         $message = \Swift_Message::newInstance()
               ->setSubject('Gite La Gaudruere - Réservation')
               ->setFrom($r->getEmail())
@@ -129,8 +139,13 @@ class ReservationController extends GaudruereController
                         $r->getRue2() . "\n" .
                         $r->getRue3() . "\n" . 
                         $r->getCodePostal(). " " . $r->getVille(),'text/plain');
-               
-        $this->get('mailer')->send($message);    
+       
+
+    // My instance of mailer
+    $mailer = \Swift_Mailer::newInstance($transport)
+            ->send($message);
+        
+      /// Ne fonctionne plus LCA 20/05/2017  $this->get('mailer')->send($message);    
     }
 
 
@@ -669,7 +684,7 @@ class ReservationController extends GaudruereController
     					$titre = "Décembre " . $anneeCourante;
     					break;
     			default:
-    					$titre = "POUET " . $anneeCourante;
+    					$titre = "? " . $anneeCourante;
     					break;
     		}
     		return $titre;
