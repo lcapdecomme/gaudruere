@@ -9,7 +9,7 @@ vertical-align: top;
 font-weight:bold;
 }
 #content .reservation-navigation h2 {
-color: #6B6565;
+color: #50507f;
 font-weight: bold;
 padding: 6px 10px 30px;
 text-align: center;
@@ -28,7 +28,7 @@ vertical-align: -2px;
 
 #content .reservation-navigation .ui-state-default
 {
-	background: #E18B14;
+	background: #6E6E6E;
 }
 
 #content .reservation-navigation .ui-slider .ui-slider-handle
@@ -52,6 +52,7 @@ vertical-align: -2px;
 
 #formResa {
 	padding: 0px 5px 0px;	
+	color: #50507f
 }
 
 .ui-datepicker
@@ -151,7 +152,7 @@ display: inline-block;
 
 #content .reservation-navigation #formResa .ligneBtnReserver
 {
-	margin-left: 72px;
+	margin-left: 0px;
 	text-align: center;
 	margin-top: 20px;
 	margin-bottom: 20px;	
@@ -163,10 +164,11 @@ display: inline-block;
     border-style: solid;
     border-width: 1px;
     cursor: pointer;
-    font-size: 10px;
+    font-size: 13px;
     font-weight: bold;
     padding: 7px;
     width: auto;	
+    color: #50507f;
 }
 
 #content .reservation-navigation #formResa #labelConflitDates

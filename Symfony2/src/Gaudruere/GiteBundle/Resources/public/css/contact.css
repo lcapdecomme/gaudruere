@@ -2,7 +2,7 @@
 display: inline-block;
 height: 100%;
 margin: 0;
-width:30%;
+width:21%;
 vertical-align: top;
 }
 #content .contact-navigation > * {
@@ -12,7 +12,7 @@ padding: 2px 15px 1px;
 color: #6B6565;
 font-weight: bold;
 line-height: 1.1em;
-padding: 6px 10px 30px;
+padding: 10px 2px 30px;
 text-align: center;
 }
 #content .contact-navigation label {
@@ -47,8 +47,9 @@ zoom: 1;
 display: inline;
 display: inline-block;
 height: 100%;
-width: 69%;
+width: 77%;
 vertical-align: top;
+padding-top: 10px;
 }
 #content .contact-content h2 {
 border-bottom: 5px solid;

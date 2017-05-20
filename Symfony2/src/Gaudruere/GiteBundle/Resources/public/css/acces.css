@@ -10,8 +10,9 @@ border: 10px solid white;
 display: inline-block;
 height: 100%;
 margin: 0;
-width: 30%;
+width: 22%;
 vertical-align: top;
+color: #50507f;
 }
 #content .acces-navigation > * {
 padding: 2px 15px 1px;
@@ -23,11 +24,14 @@ font-size: 1.1em;
 #content .acces-navigation ul {
 margin-left : 12px;
 }
-
+#content .acces-content ul
+{
+	margin-left:20px;
+}
 #content .acces-content {
 display: inline-block;
 height: 100%;
-width: 69%;
+width: 77%;
 vertical-align: top;
 }
 #content .acces-content h2 {

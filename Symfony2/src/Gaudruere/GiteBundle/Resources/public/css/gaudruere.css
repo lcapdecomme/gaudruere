@@ -4,9 +4,9 @@
 }
 
 body {
-	background: url("bg_body.gif") repeat scroll 0 0 #E0DBBA;
-	color: #777777;
-	font: 14px "Verdana", Helvetica, Arial, sans-serif;
+	background: url("bg_body.gif") repeat scroll 0 0 #DDD;
+	color: #6c6c7f;
+	font: 13px "Verdana", Helvetica, Arial, sans-serif;
 }
 
 /*
@@ -16,7 +16,7 @@ img {
 */
 
 #bandeau {
-	background: url("bg_header.gif") repeat scroll 0 150px transparent;
+	background-color: #3a5677;
 	height: 150px;
 	width: 100%;
 }
@@ -59,7 +59,7 @@ z-index: 1000;
 }
 /* Content */
 #content {  
-background-color: #E5E1C7;    
+background-color: #FAFAFA;    
 width: 980px;
 min-height: 450px;
 }
@@ -69,28 +69,35 @@ background: url("bg_content.png") repeat-y scroll 0 0 transparent;
 min-height: 450px;
 }
 
+.doublepagereservation {
+background: url("bg_content_reservation.png") repeat-y scroll 0 0 transparent;
+min-height: 450px;
+}
 
 /* Bas-de-page */
 #footer {
-background: url("bg_menu.png") repeat scroll 0 0 transparent;
+aabackground: url("bg_menu.png") repeat scroll 0 0 transparent;
+background-color:#3a5677;
 height: 80px;
 width: 978px;
 border: 1px solid #808080;
 }
 #footer #remerciementfooter {
-color: #E5E1C7;
-font-size: 0.9em;
+color: #D0D0D0;
+font-size: 1em;
 margin: 0;
 text-align: center;
 text-decoration: none;
 width:100%;
 float:right;
 display:inline;
+text-align: right;
+margin: 0 21px 0 0;
 }
 #footer #titrefooter {
-color: #E18B14;
+color: #EAEAEA;
 font-size: 2.2em;
-margin: 13px 20px 0 0;
+margin: 9px 16px 0 0;;
 text-align: right;
 text-decoration: none;
 width:75%;
@@ -108,7 +115,7 @@ display:inline;
 }
 #footer #contactfooter a {
 font-size: 1.1em;
-color: #FFFFFF;
-border-bottom:3px solid #FFFFFF; 
+color: #EAEAEA;
+border-bottom:3px solid #EAEAEA;
 text-decoration: none;
 }
