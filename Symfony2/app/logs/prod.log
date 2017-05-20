@@ -1,3 +1,0 @@
-[2012-09-10 07:09:30] security.INFO: Populated SecurityContext with an anonymous Token [] []
-[2012-09-10 07:09:31] request.INFO: Matched route "gaudruere_gite_accueil_index" (parameters: "_controller": "Gaudruere\GiteBundle\Controller\AccueilController::indexAction", "_route": "gaudruere_gite_accueil_index") [] []
-[2012-09-10 07:09:31] request.CRITICAL: PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'p0_.phraseRemerciement' in 'field list' (uncaught exception) at C:\Users\capdecomme\Desktop\Gaudruere\Symfony2\vendor\doctrine-dbal\lib\Doctrine\DBAL\Connection.php line 618 [] []
